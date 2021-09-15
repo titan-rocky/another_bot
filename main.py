@@ -75,14 +75,15 @@ async def on_message(message):
 			await message.channel.send('Vela solliye kollranga ya !')
 		elif dx.lower().find('dei nesamani')!=-1:
 			await message.channel.send('Ey ey ! mariyadha mariyadha !')
-		elif all(i in d for i in ['ippo','enna','panradhu']):
-			await message.channel.send('Oru Aani yum Pudunga Venam')
 		elif dx.lower().find('gopal')!=-1:
 			await message.channel.send(f'Gopalu ! Gopalu !!')
 		else:
 			await message.channel.send('Dei Ennada Inge Meetingu ?')
 	elif dx.lower().find('deepak')!=-1:
 			await message.channel.send(f'Vandhuttana avan . Escapeeeeeeee !!!')
+	
+	if all(i in d for i in ['ippo','enna','panradhu']):
+		await message.reply('Oru Aani yum Pudunga Venam')
 
 	if message.author.id==message.guild.owner_id:
 		gox=random.randint(0,13)
