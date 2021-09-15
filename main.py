@@ -5,8 +5,9 @@ import random
 import time
 import asyncio
 from datetime import datetime
-import threading
 import tracemalloc
+import os
+
 
 tracemalloc.start()
 
@@ -21,13 +22,13 @@ async def on_ready():
 	print(bot.user)
 	jd=random.randint(1,6)
 	if jd==3:
-		await bot.get_channel(797473215223431192).send('https://tenor.com/baf7V.gif')
+		await bot.get_channel(887614433210302478).send('https://tenor.com/baf7V.gif')
 	elif jd in [1,2,4,6]:
-		await bot.get_channel(797473215223431192).send('Itho Vanthutten ...')
+		await bot.get_channel(887614433210302478).send('Itho Vanthutten ...')
 		if jd==4:
-			await bot.get_channel(797473215223431192).send('https://tenor.com/y9h7.gif')
+			await bot.get_channel(887614433210302478).send('https://tenor.com/y9h7.gif')
 
-	p=2
+	p=random.randint(1,2)
 	if p==1:
 		await bot.change_presence(status=discord.Status.idle,activity=discord.CustomActivity(name='Dei Aprasandingalaa'))
 	#if p==2:
@@ -60,7 +61,7 @@ async def on_message(message):
 	elif dx.lower().find('deepak')!=-1:
 			await message.channel.send(f'Vandhuttana avan . Escapeeeeeeee !!!')
 
-	if message.author.id==756379765325299774:
+	if message.author.id==message.guild.owner.id:
 		gox=random.randint(0,10)
 		if gox==3:
 			await message.channel.send('Dei Intha Aiyya Thanda Intha Veetukku Mainu')
@@ -86,18 +87,17 @@ async def kill(ctx,*,ba):
 		lis=[f'Ennaya da Kolla paakura {ctx.author.mention} ! Dei inaikku unna Kollama vida Maatan !']
 		gg=1
 	elif not (f'<@!{ctx.author.id}>'==ba) or not (ba.lower().find(ctx.author.name)):
-		lis=[f'{bas} died due to the Cowrine Virus',
+		lis=[f'{bas} died due to the Corona Virus',
 		f'{bas} tried to swim in Air after Seeing Shaktiman',
-		f'{bas} rided Lord<@765139062914023425>. Bad idea though. It was too rough so that friction Heated the dick and it melted',
+		f'{bas} rided A Female Horse. Bad idea though. It was too rough so that friction Heated the ||pp|| and it melted',
 		f'<@{ctx.author.id}> Reaps {bas}\'s 8====D , Ultimately resulting in Fatality',
 		f'{bas} Is in Bathroom , Suddently Funni appears .\nWhats next , inevitable Death only ',
 		f'<@{ctx.author.id}> : Omae wa MOU SHINDE IRU\n{bas}  : NANI ?\n{bas} gets Disintegered :(',
-		f'{bas} : You Can\'t Kill Me\n<@{ctx.author.id}> : I Know , But He Can\n{bas} was killed by **V E T T R I** with **M 4 1 6**',
-		f'**Vettri Sir** : This boy {bas}\'s Heart , ummm....  , sin θ  is zero now :( ',
+		f'{bas} : You Can\'t Kill Me\n<@{ctx.author.id}> : I Know , But He Can\n{bas} was killed by **D R A G O** with **M 4 1 6**',
+		f'**Kanaku Vaathi** : This boy {bas}\'s Heart , ummm....  , sin θ  is zero now :( ',
 		f'Kekala la , Konjam saththama sollunga !',
-		f'{bas} Suicided because **THE ATOM** didnt accept his proposal . Lucky <@691122332017754122>',
-		f'Bevil sent {bas} to hell ',
-		f'{bas} Disappeared due to Acidity of Black Sins\' Reproduced Slime ']
+		f'{bas} Suicided because **His Crush** didnt accept his proposal .',
+		f'{bas} was slain by KiRiTo Kun with **Excalibur**',]
 
 	else:
 		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
@@ -123,7 +123,7 @@ async def kill(ctx,*,ba):
 		await ctx.send(f'Poda vendiyadha podra **Paradesi Payale** <@{ctx.author.id}>')
 		await ctx.send('https://tenor.com/7KlK.gif')
 
-
+'''
 @bot.command()
 async def funnyface(ctx):
 	''' : Funny Faces Of our Class Specimens'''
@@ -135,7 +135,8 @@ async def funnyface(ctx):
 	'https://cdn.discordapp.com/attachments/800768867117826048/802222466264727612/PicsArt_01-22-10.35.19.jpg']
 	dng=random.randint(0,len(lis)-1)
 	await ctx.send(lis[dng])
-	
+'''
+
 @bot.command()
 async def help(ctx):
 	col=[0x264653,0xa9d8f,0xe9c46a,0xf4a261,0xe76f51]
@@ -160,7 +161,7 @@ class kiruba(commands.cog):
 
 
 
-TOKEN='Nzk5OTAxNzc1NTM2MDYyNDc0.YAKUlA.k9gJ24w-EvQuTxcShX2nDDj5Czc'
+TOKEN=os.environ['discord_token']
 bot.run(TOKEN)
 
 
