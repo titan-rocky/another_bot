@@ -25,12 +25,12 @@ async def morning():
 	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
 	b=indtime.strftime('%H:%M:%S')
 	if b.startswith('00:30'):
-		await cl.get_channel(755751678971478049).send('Good Night Nanbargale !')
+		await bot.get_channel(755751678971478049).send('Good Night Nanbargale !')
 	elif b.startswith('07:30'):
 		if random.randint(0,3)==3:
-			await cl.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
-			await cl.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
-		await cl.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
+			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
+			await bot.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
+		await cbot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
 
 
 
