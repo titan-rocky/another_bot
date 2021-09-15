@@ -1,10 +1,14 @@
 import sys
 import discord
-from discord.ext import commands
+from discord.ext import commands,tasks
+
 import random
 import time
 import asyncio
+
 from datetime import datetime
+import pytz
+
 import tracemalloc
 import os
 from alive import keep_alive
@@ -15,6 +19,11 @@ tracemalloc.start()
 #Adra nesamani
 bot=commands.Bot(command_prefix='nesa ')
 bot.remove_command('help')
+
+@tasks.loop()
+async def morning():
+
+
 '''K A I P U L L A : dedicated for Type-A'''
 @bot.event
 async def on_ready():
@@ -53,6 +62,8 @@ async def on_message(message):
 			await message.channel.send('Vela solliye kollranga ya !')
 		elif dx.lower().find('dei nesamani')!=-1:
 			await message.channel.send('Ey ey ! mariyadha mariyadha !')
+		elif all(i in d for i in ['ippo','enna','panradhu']):
+			await message.channel.send('Oru Aani yum Pudunga Venam')
 		elif dx.lower().find('gopal')!=-1:
 			await message.channel.send(f'Gopalu ! Gopalu !!')
 		else:
