@@ -22,12 +22,12 @@ bot.remove_command('help')
 
 @tasks.loop(seconds=60)
 async def morning():
-	indtime=datetime.datetime.now(pytz.timezone('Asia/Calcutta'))
+	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
 	b=indtime.strftime('%H:%M:%S')
 	if b.startswith('00:30'):
 		await cl.get_channel(755751678971478049).send('Good Night Nanbargale !')
 	elif b.startswith('07:30'):
-		if random.randit(0,3)==3:
+		if random.randint(0,3)==3:
 			await cl.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
 			await cl.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
 		await cl.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
