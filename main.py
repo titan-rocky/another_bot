@@ -45,8 +45,6 @@ async def on_message(message):
 	if message.author == bot.user:
 			return 1
 	dx=str(message.content).lower()
-	if dx.find('hareesh')!=-1:
-		await message.channel.send('Call Him Sticker Sunniyan')
 	if dx.lower().find('nesamani')!=-1:
 		if dx.lower().find('hi nesamani')!=-1:
 			await message.channel.send('Sollra **Venna**')
@@ -92,7 +90,7 @@ async def kill(ctx,*,ba):
 		f'{bas} tried to swim in Air after Seeing Shaktiman',
 		f'{bas} rided A Female Horse. Bad idea though. It was too rough so that friction Heated the ||pp|| and it melted',
 		f'<@{ctx.author.id}> Reaps {bas}\'s 8====D , Ultimately resulting in Fatality',
-		f'{bas} Is in Bathroom , Suddently Funni appears .\nWhats next , inevitable Death only ',
+		f'{bas} Is in Bathroom , Suddently XoMbiE appears .\nWhats next , inevitable Death only ',
 		f'<@{ctx.author.id}> : Omae wa MOU SHINDE IRU\n{bas}  : NANI ?\n{bas} gets Disintegered :(',
 		f'{bas} : You Can\'t Kill Me\n<@{ctx.author.id}> : I Know , But He Can\n{bas} was killed by **D R A G O** with **M 4 1 6**',
 		f'**Kanaku Vaathi** : This boy {bas}\'s Heart , ummm....  , sin θ  is zero now :( ',
