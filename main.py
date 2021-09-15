@@ -30,7 +30,7 @@ async def morning():
 		if random.randint(0,3)==3:
 			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
 			await bot.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
-		await cbot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
+		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
 
 
 
