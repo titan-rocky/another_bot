@@ -7,6 +7,7 @@ import asyncio
 from datetime import datetime
 import tracemalloc
 import os
+from alive import keep_alive
 
 
 tracemalloc.start()
@@ -159,7 +160,7 @@ class kiruba(commands.cog):
 
 
 
-
+keep_alive()
 
 TOKEN=os.environ['discord_token']
 bot.run(TOKEN)
