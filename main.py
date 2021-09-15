@@ -137,7 +137,7 @@ async def kill(ctx,*,ba):
 			await dd.edit(content='Suda Suda news Varudhu Paaru **. . .** ')
 			await asyncio.sleep(0.85)
 		await ctx.send(f'{ctx.author.mention} Tried to Kill Me ,\nBut unfortunately He can\'t even Think of killing fully.\nHe died Brutually , Pity on him :rofl: ')
-		await ctx.send('https://tenor.com/view/kick-vadivel-vadivelu-tamil-ramesh-gif-10667470')
+		await ctx.send('https://cdn.discordapp.com/attachments/887634920770506752/887708970339430480/kick-vadivel.gif')
 	
 	if ctx.message.content:
 		pass
