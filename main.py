@@ -127,7 +127,7 @@ async def kill(ctx,*,ba):
 '''
 @bot.command()
 async def funnyface(ctx):
-	''' : Funny Faces Of our Class Specimens'''
+	' : Funny Faces Of our Class Specimens'
 	lis=['https://cdn.discordapp.com/attachments/800768867117826048/801859500242894949/PicsArt_01-21-10.32.38.jpg',
 	'https://cdn.discordapp.com/attachments/800768867117826048/801859500789334016/PicsArt_01-21-10.27.21.jpg',
 	'https://cdn.discordapp.com/attachments/800768867117826048/801859501040336936/PicsArt_01-21-10.21.13.jpg',
