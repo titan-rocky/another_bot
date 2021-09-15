@@ -62,8 +62,8 @@ async def on_message(message):
 	elif dx.lower().find('deepak')!=-1:
 			await message.channel.send(f'Vandhuttana avan . Escapeeeeeeee !!!')
 
-	if message.author.id==message.guild.owner.id:
-		gox=random.randint(0,10)
+	if message.author.id==message.guild.owner_id:
+		gox=random.randint(0,13)
 		if gox==3:
 			await message.channel.send('Dei Intha Aiyya Thanda Intha Veetukku Mainu')
 			await message.channel.send('https://tenor.com/baf7N.gif')
