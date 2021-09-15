@@ -20,8 +20,19 @@ tracemalloc.start()
 bot=commands.Bot(command_prefix='nesa ')
 bot.remove_command('help')
 
-@tasks.loop()
+@tasks.loop(seconds=60)
 async def morning():
+	indtime=datetime.datetime.now(pytz.timezone('Asia/Calcutta'))
+	b=indtime.strftime('%H:%M:%S')
+	if b.startswith('00:30'):
+		await cl.get_channel(755751678971478049).send('Good Night Nanbargale !')
+	elif b.startswith('07:30'):
+		if random.randit(0,3)==3:
+			await cl.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
+			await cl.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
+		await cl.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
+
+
 
 
 '''K A I P U L L A : dedicated for Type-A'''
@@ -30,6 +41,7 @@ async def on_ready():
 	'''N E S A M A N I : dedicated for Type-A'''
 	print('Ready to bell')
 	print(bot.user)
+	morning.start()
 	jd=random.randint(1,6)
 	if jd==3:
 		await bot.get_channel(887614433210302478).send('https://tenor.com/baf7V.gif')
