@@ -77,7 +77,7 @@ async def on_message(message):
 			await message.channel.send('Ey ey ! mariyadha mariyadha !')
 		elif dx.lower().find('gopal')!=-1:
 			await message.channel.send(f'Gopalu ! Gopalu !!')
-		else:
+		elif dx.lower()=='nesamani':
 			await message.channel.send('Idho Vandhuttan !!')
 			await message.channel.send('https://cdn.discordapp.com/attachments/887634920770506752/887712177258111006/vadivelu-comedy.gif')
 	elif dx.lower().find('deepak')!=-1:
