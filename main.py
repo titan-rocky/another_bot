@@ -1,10 +1,14 @@
 import sys
 import discord
-from discord.ext import commands
+from discord.ext import commands,tasks
+
 import random
 import time
 import asyncio
+
 from datetime import datetime
+import pytz
+
 import tracemalloc
 import os
 from alive import keep_alive
@@ -15,6 +19,11 @@ tracemalloc.start()
 #Adra nesamani
 bot=commands.Bot(command_prefix='nesa ')
 bot.remove_command('help')
+
+@tasks.loop()
+async def morning():
+
+
 '''K A I P U L L A : dedicated for Type-A'''
 @bot.event
 async def on_ready():
@@ -45,8 +54,6 @@ async def on_message(message):
 	if message.author == bot.user:
 			return 1
 	dx=str(message.content).lower()
-	if dx.find('hareesh')!=-1:
-		await message.channel.send('Call Him Sticker Sunniyan')
 	if dx.lower().find('nesamani')!=-1:
 		if dx.lower().find('hi nesamani')!=-1:
 			await message.channel.send('Sollra **Venna**')
@@ -55,6 +62,8 @@ async def on_message(message):
 			await message.channel.send('Vela solliye kollranga ya !')
 		elif dx.lower().find('dei nesamani')!=-1:
 			await message.channel.send('Ey ey ! mariyadha mariyadha !')
+		elif all(i in d for i in ['ippo','enna','panradhu']):
+			await message.channel.send('Oru Aani yum Pudunga Venam')
 		elif dx.lower().find('gopal')!=-1:
 			await message.channel.send(f'Gopalu ! Gopalu !!')
 		else:
@@ -92,7 +101,7 @@ async def kill(ctx,*,ba):
 		f'{bas} tried to swim in Air after Seeing Shaktiman',
 		f'{bas} rided A Female Horse. Bad idea though. It was too rough so that friction Heated the ||pp|| and it melted',
 		f'<@{ctx.author.id}> Reaps {bas}\'s 8====D , Ultimately resulting in Fatality',
-		f'{bas} Is in Bathroom , Suddently Funni appears .\nWhats next , inevitable Death only ',
+		f'{bas} Is in Bathroom , Suddently XoMbiE appears .\nWhats next , inevitable Death only ',
 		f'<@{ctx.author.id}> : Omae wa MOU SHINDE IRU\n{bas}  : NANI ?\n{bas} gets Disintegered :(',
 		f'{bas} : You Can\'t Kill Me\n<@{ctx.author.id}> : I Know , But He Can\n{bas} was killed by **D R A G O** with **M 4 1 6**',
 		f'**Kanaku Vaathi** : This boy {bas}\'s Heart , ummm....  , sin θ  is zero now :( ',
