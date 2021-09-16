@@ -1,0 +1,67 @@
+{ 
+	"jokes":
+	[
+		{	
+			"type": "kadi",
+			"content" : "Marame illadha Kaadu Enna kaadunu theriyuma",
+			"subcontent" : "SIM Card uh !" 
+		},
+
+		{
+			"type": "kadi",
+			"content" : "Marame illadha Kaadu Enna kaadunu theriyuma",
+			"subcontent" : "SIM Card uh !" 
+		},
+
+		{
+			"type": "single",
+			"dialogue" : "Enna dhan unga oorla Vellam Vandhalum , andha Vellathaula sakkara pongal panna mudiyuma ?"
+		},
+		{
+			"type": "qa",
+			"question" : "Ulagathulaye Kan operation enga nadandhadhu",
+			"answer" : "Romba Easy Sir , Kan la dhan nadandhadhu"
+		},
+		{
+			"type": "kadi",
+			"content" : "Aiyya , Jetti pottu Mutti podalam",
+			"subcontent" : "Aana Mutti pottu Jetti poda mudiyuma ?" 
+		},
+		{
+			"type": "convo",
+			"line1" : "Oruthan enna pannan , idhe maari oru periya veedu , andha veetukku pachcha colour satta pottukuttu , vella colour vetti kattikittu , Straight ah veetukku poi , Kadha thattu thattu thattu nu thattitan",
+			"line2" : "Yen ?",
+			"line3" : "Yena andha veetla calling bell illa"
+
+		},
+		{
+			"type": "kadi",
+			"content" : "Rendu Puli , veriyana pasi , kaatu kulla pochan , maan onnu kedachadhu , Oru puli mattum saaptichan , oru puli sapuda ve illaya , Yen ?",
+			"subcontent" : "Yaena andha puli sabarimalai ku maala pottuchan" 
+		},
+		{
+			"type": "kadi",
+			"content" : "Make up pottutrindhan ayya , appo eyeliner kum lipstick kum sanda vandhichan , yaaru periyavanga nu , aana lipstick jeichirichan , Yen ?",
+			"subcontent" : "Vaaimaiye Vellum"
+		},
+		{
+			"type": "single",
+			"dialogue" : "Unga Oorla pongal ku leave viduvanga , idly ku leave viduvangala ?"
+		},
+		{
+			"type": "convo",
+			"line1" : "Tiger : Anna , Room ku pudusa anna ?",
+			"line2" : "Vadivel Balaji : Aama nga",
+			"line3" : "Tiger : Anna oru Paththu Ruva panam Kadan kudunga na",
+			"line4" : "Vadivel Balaji : Yenga , enna nga baathroom pora edathula vandhu kadan kekuringa",
+			"line5" : "Tiger : Anna adhdhan na **Kaalai Kadan**"
+		},
+		{
+			"type": "kadi",
+			"content" : "Oru police enna pannaru , Oru thirudana odi odi odi pudichi, Straight ah jail ku kootunu vandharu ,Jail ku ulla thallra munnadi , thirudan thalaila fulla enna thecharu , Yen ?",
+			"subcontent" : "Yaena avan Aaiyul dhandana Kaithi"
+		}
+
+	]
+	
+}

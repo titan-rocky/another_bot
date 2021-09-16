@@ -14,6 +14,7 @@ import os
 from alive import keep_alive
 
 import chatbot
+import json
 
 
 tracemalloc.start()
@@ -162,6 +163,24 @@ async def help(ctx):
 	await ctx.send(embed=e)
 
 
+
+@bot.command()
+async def tigerjoke(ctx):
+	file=open('tigergarden.json',r)
+	cont=json.load(file)
+	joke=random.choice(cont['jokes'])
+	oe=discord.Embed(title='Best-Picked Jokes of Mine')
+	oe.set_author(name='Tiger Garden Thangadurai')
+	oe.set_thumbnail(url='https://cdn.discordapp.com/attachments/887634920770506752/887989766631596032/Tiger-Thangadurai-Images-6.jpg')
+
+	if joke['type']=='kadi':
+		e.add_field(name=f"\n{joke['content']}", value=f'{joke['subcontent']}')
+	elif joke['type']=='single':
+		e.add_field(name=f'Joke :',value=f'{joke['dialogue']}')
+	elif joke['type']=='qa':
+		e.add_field(name=f'{joke['question']}',value=f'{joke['answer']}')
+	await ctx.send(embed=oe)
+	file.close()
 '''
 class kiruba(commands.cog): 
 	def init(self,bot):
