@@ -169,7 +169,7 @@ async def tigerjoke(ctx):
 	file=open('tigergarden.json','r')
 	cont=json.load(file)
 	joke=random.choice(cont['jokes'])
-	oe=discord.Embed(title='Tiger-Garden Thangadurai',description='Warning ! Tharkolai jokes\nJokes from general , as well as KPY Champions',url='https://en.wikipedia.org/wiki/Thangadurai')
+	oe=discord.Embed(title='Tiger-Garden Thangadurai',color=0x57F287,description='Warning ! Tharkolai jokes\nJokes from general , as well as KPY Champions',url='https://en.wikipedia.org/wiki/Thangadurai')
 	oe.set_author(name='Best-Picked Jokes of')
 	oe.set_thumbnail(url='https://cdn.discordapp.com/attachments/887634920770506752/887989766631596032/Tiger-Thangadurai-Images-6.jpg')
 
