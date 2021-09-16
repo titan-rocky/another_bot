@@ -169,8 +169,8 @@ async def tigerjoke(ctx):
 	file=open('tigergarden.json',r)
 	cont=json.load(file)
 	joke=random.choice(cont['jokes'])
-	oe=discord.Embed(title='Best-Picked Jokes of Mine',description='Jokes from general , as well as KPY Champions')
-	oe.set_author(name='Tiger Garden Thangadurai')
+	oe=discord.Embed(title='Tiger-Garden Thangadurai',description='Warning ! Tharkolai jokes\nJokes from general , as well as KPY Champions',url='https://en.wikipedia.org/wiki/Thangadurai')
+	oe.set_author(name='Best-Picked Jokes of')
 	oe.set_thumbnail(url='https://cdn.discordapp.com/attachments/887634920770506752/887989766631596032/Tiger-Thangadurai-Images-6.jpg')
 
 	if joke['type']=='kadi':
@@ -183,6 +183,17 @@ async def tigerjoke(ctx):
 	elif joke['type']=='qa':
 		a=joke['question'];b=joke['answer']
 		e.add_field(name=f'{a}',value=f'{b}')
+	elif joke['type']=='convo':
+		text=''
+		for i in range(1,8):
+			if f'line{i}' in joke:
+				cx=joke[f'line{i}']
+				text=text+f'{cx}'+'\n'
+			else:
+				break
+		print(text)
+		e.add_field(name='Conversation :',value=text)
+
 	await ctx.send(embed=oe)
 	file.close()
 '''
