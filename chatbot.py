@@ -20,7 +20,7 @@ class chatreply:
 		c_kichina=any(i in word for i in ['chithappa','siththappu','chithappu'])
 		c_whattodo=all(i in word for i in ['ippo','enna','panradhu'])
 		c_disapp=all(i in word for i in ['inaikki gaali nee','nesamani']) or all(i in word for i in ['inaikki gaali nee','nesa']) or all(i in word for i in ['romba panra','nesamani']) 
-		c_contract='contract' in word or 'contractu' in wor
+		c_contract='contract' in word or 'contractu' in word
 		c_sad=any(i in word for i in ['sad','depressed','sogam','unhappy','saava','saaga'])
 
 		if c_hi or c_vanakkam:
@@ -47,7 +47,7 @@ class chatreply:
 			self.Type='Reply'
 			self.Message='Dei Kichinamoorthy ! Eppadra irukka ?'
 
-		elif c_contract:
+		elif c_disapp or c_contract:
 			self.Type='Reply'
 			self.Message='Saami Thayavu Seinchu En Contractla Mattum Kai Vechchidaathinga'
 
@@ -55,7 +55,7 @@ class chatreply:
 			self.Type='Reply'
 			self.Message='Dei Enna Feeilinga !'
 
-		elif c.c_whattodo:
+		elif c_whattodo:
 			self.Type='Reply'
 			self.Message='Oru Aani yum Pudunga Venam'
 
