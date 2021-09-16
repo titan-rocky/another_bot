@@ -154,7 +154,7 @@ async def funnyface(ctx):
 async def help(ctx):
 	col=[0x264653,0xa9d8f,0xe9c46a,0xf4a261,0xe76f51]
 	l=random.randint(0,len(col)-1)
-	ee='''Mention <@799901775536062474> to use commands of mine\n\nCommands:\n**<@799901775536062474> kill** : To kill Ya boys with Commands\n**<@799901775536062474> funnyface** : To Spend some time in posting random shitty\n            Images of Our Specimens\n**<@799901775536062474> help** : show this message '''
+	ee='''Mention <@799901775536062474> to use commands of mine\n\nCommands:\n**<@799901775536062474> kill** : To kill Ya boys with Commands\n**<@799901775536062474> funnyface** : To Spend some time in posting random shitty\n            Images of Our Specimens\n**<@799901775536062474> tigerjoke** : jokes from palaya joke thangadurai\n**<@799901775536062474> help** : show this message '''
 	e=discord.Embed(title='Help Command',desc=ee,color=col[l])
 	e.set_author(name='Nesamani')
 	e.add_field(name="\nPrefix:", value=ee)
