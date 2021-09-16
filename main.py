@@ -13,11 +13,13 @@ import tracemalloc
 import os
 from alive import keep_alive
 
+import chatbot
+
 
 tracemalloc.start()
 
 #Adra nesamani
-bot=commands.Bot(command_prefix='nesa ')
+bot=commands.Bot(command_prefix=commands.when_mentioned)
 bot.remove_command('help')
 
 @tasks.loop(seconds=60)
@@ -41,7 +43,6 @@ async def on_ready():
 	'''N E S A M A N I : dedicated for Type-A'''
 	print('Ready to bell')
 	print(bot.user)
-	morning.start()
 	jd=random.randint(1,6)
 	if jd==3:
 		await bot.get_channel(887614433210302478).send('https://tenor.com/baf7V.gif')
@@ -58,6 +59,7 @@ async def on_ready():
 	if p==2:
 		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
 
+	morning.start()
 	   #if bot.get(member.status == Status.online
 
 @bot.event
@@ -66,26 +68,9 @@ async def on_message(message):
 	print(d)
 	if message.author == bot.user:
 			return 1
-	dx=str(message.content).lower()
-	if dx.lower().find('nesamani')!=-1:
-		if dx.lower().find('hi nesamani')!=-1:
-			await message.channel.send('Sollra **Venna**')
-			#await message.channel.send(file=discord.File('vadivel_1.jpg'))
-		elif dx.lower().find('bye nesamani')!=-1:
-			await message.channel.send('Vela solliye kollranga ya !')
-		elif dx.lower().find('dei nesamani')!=-1:
-			await message.channel.send('Ey ey ! mariyadha mariyadha !')
-		elif dx.lower().find('gopal')!=-1:
-			await message.channel.send(f'Gopalu ! Gopalu !!')
-		elif dx.lower()=='nesamani':
-			await message.channel.send('Idho Vandhuttan !!')
-			await message.channel.send('https://cdn.discordapp.com/attachments/887634920770506752/887712177258111006/vadivelu-comedy.gif')
-	elif dx.lower().find('deepak')!=-1:
-			await message.channel.send(f'Vandhuttana avan . Escapeeeeeeee !!!')
-	
-	if all(i in d for i in ['ippo','enna','panradhu']):
-		await message.reply('Oru Aani yum Pudunga Venam')
-
+	cxt=chatreply(message)
+	if cxt.Message:
+		await message.reply(f'{cxt.Message}')
 	if message.author.id==message.guild.owner_id:
 		gox=random.randint(0,13)
 		if gox==3:
@@ -96,19 +81,20 @@ async def on_message(message):
 
 @bot.event
 async def on_command_error(ctx,error):
-	print(error)
-	await ctx.send('Poda vendiyadha podra **Paradesi Payale**')
-	await ctx.send('https://tenor.com/7KlK.gif')
+	if isinstance(error,discord.ext.commands.CommandNotFoundError:)
+		await ctx.send('Appadi oru command uh Namma jilla laye illa')
+		#await ctx.send('https://tenor.com/7KlK.gif')
 
 @bot.command()
 async def kill(ctx,*,ba):
 	''' :  Kill All with Words'''
 	g=ba.split(',')
+	print(g)
 	bas=g[0]
 	#print(ba)
 	#print(f'<@!799901775536062474>'==bas)
 	gg=0
-	if f'<@!799901775536062474>'==bas or bas.lower()=='nesamani':
+	if f'<@!799901775536062474>'==bas or bas.lower()=='nesamani' or bas.lower()=='myself':
 		lis=[f'Ennaya da Kolla paakura {ctx.author.mention} ! Dei inaikku unna Kollama vida Maatan !']
 		gg=1
 	elif not (f'<@!{ctx.author.id}>'==ba) or not (ba.lower().find(ctx.author.name)):
@@ -123,7 +109,8 @@ async def kill(ctx,*,ba):
 		f'Kekala la , Konjam saththama sollunga !',
 		f'{bas} Suicided because **His Crush** didnt accept his proposal .',
 		f'{bas} was slain by KiRiTo Kun with **Excalibur**',]
-
+	elif ba.lower().find('myself'):
+		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
 	else:
 		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
 	index=random.randint(0,len(lis)-1);print(index)
@@ -166,7 +153,7 @@ async def funnyface(ctx):
 async def help(ctx):
 	col=[0x264653,0xa9d8f,0xe9c46a,0xf4a261,0xe76f51]
 	l=random.randint(0,len(col)-1)
-	ee='''Use prefix **nesa** to use commands of mine\n\nCommands:\n**nesa kill** : To kill Ya boys with Commands\n**nesa funnyface** : To Spend some time in posting random shitty\n            Images of Our Specimens\n**nesa help** : show this message '''
+	ee='''Mention <@799901775536062474> to use commands of mine\n\nCommands:\n**<@799901775536062474> kill** : To kill Ya boys with Commands\n**<@799901775536062474> funnyface** : To Spend some time in posting random shitty\n            Images of Our Specimens\n**<@799901775536062474> help** : show this message '''
 	e=discord.Embed(title='Help Command',desc=ee,color=col[l])
 	e.set_author(name='Nesamani from TYPE A')
 	e.add_field(name="\nPrefix:", value=ee)
