@@ -9,7 +9,7 @@ class chatreply:
 	def reply(self):
 		word=[i.lower() for i in self.content.split(' ')]
 		print(word)
-		if any(i=='?' for i in word) or any('?' in i for i in words ):
+		if any(i=='?' for i in word) or any('?' in i for i in word ):
 			self.Type='Question'
 
 		c_nesa='nesamani' in word  or 'nesa' in word 

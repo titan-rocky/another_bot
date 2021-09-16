@@ -65,7 +65,6 @@ async def on_ready():
 @bot.event
 async def on_message(message):
 	d=[i.lower() for i in str(message.content).split()]
-	print(d)
 	if message.author == bot.user:
 			return 1
 	cxt=chatbot.chatreply(message)
