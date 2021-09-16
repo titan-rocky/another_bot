@@ -194,7 +194,6 @@ async def tigerjoke(ctx):
 		print(text)
 		oe.add_field(name='Conversation :',value=text)
 
-		oe.add_field(name=f'{a}',value=f'{b}')
 	await ctx.send(embed=oe)
 	file.close()
 '''
