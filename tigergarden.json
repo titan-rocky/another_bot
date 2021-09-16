@@ -23,9 +23,9 @@
 			"answer" : "Romba Easy Sir , Kan la dhan nadandhadhu"
 		},
 		{
-			"type": "kadi",
-			"content" : "Aiyya , Jetti pottu Mutti podalam",
-			"subcontent" : "Aana Mutti pottu Jetti poda mudiyuma ?" 
+			"type": "single",
+			"dialogue" : "Aiyya , Jetti pottu Mutti podalam, Aana Mutti pottu Jetti poda mudiyuma ?"
+			 
 		},
 		{
 			"type": "convo",
