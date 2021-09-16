@@ -36,7 +36,7 @@ async def morning():
 		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
 	elif b.startswith('06:00'):
 		await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='@Nesamani help'))
-	elif b.startswith('18:00')
+	elif b.startswith('18:00'):
 		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
 
 '''K A I P U L L A : dedicated for Type-A'''
