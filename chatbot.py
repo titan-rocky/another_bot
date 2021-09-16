@@ -19,7 +19,7 @@ class chatreply:
 		c_call=all(i in word for i in ['dei','nesamani']) or all(i in word for i in ['dei','nesa'])
 		c_kichina=any(i in word for i in ['chithappa','siththappu','chithappu'])
 		c_whattodo=all(i in word for i in ['ippo','enna','panradhu'])
-		c_disapp=all(i in word for i in ['inaikki gaali nee','nesamani']) or all(i in word for i in ['inaikki gaali nee','nesa']) or all(i in word for i in ['romba panra','nesamani']) 
+		c_disapp=all(i in word for i in ['inaikki','gaali','nee','nesamani']) or all(i in word for i in ['inaikki','gaali','nee','nesa']) or all(i in word for i in ['romba panra','nesamani']) or all(i in word for i in ['inaikki','seththa','da','nee','nesamani']) 
 		c_contract='contract' in word or 'contractu' in word
 		c_sad=any(i in word for i in ['sad','depressed','sogam','unhappy','saava','saaga'])
 
