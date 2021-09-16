@@ -8,6 +8,7 @@ class chatreply:
 
 	def reply(self):
 		word=[i.lower() for i in self.content.split(' ')]
+		print(word)
 		if any(i=='?' for i in word) or any('?' in i for i in words ):
 			self.Type='Question'
 
@@ -22,7 +23,7 @@ class chatreply:
 		c_contract='contract' in word or 'contractu' in wor
 		c_sad=any(i in word for i in ['sad','depressed','sogam','unhappy','saava','saaga'])
 
-		if c_hi:
+		if c_hi or c_vanakkam:
 			self.Type='Reply'
 			replies=['Sollra **Venna**','Vanakkam 🙏','*Ada Namma Paiyan*\n**Sollupa**',]
 			self.Message=random.choice(replies)
