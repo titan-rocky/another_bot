@@ -68,7 +68,7 @@ async def on_message(message):
 	print(d)
 	if message.author == bot.user:
 			return 1
-	cxt=chatreply(message)
+	cxt=chatbot.chatreply(message)
 	if cxt.Message:
 		await message.reply(f'{cxt.Message}')
 	if message.author.id==message.guild.owner_id:
@@ -81,7 +81,7 @@ async def on_message(message):
 
 @bot.event
 async def on_command_error(ctx,error):
-	if isinstance(error,discord.ext.commands.CommandNotFoundError:)
+	if isinstance(error,discord.ext.commands.CommandNotFoundError):
 		await ctx.send('Appadi oru command uh Namma jilla laye illa')
 		#await ctx.send('https://tenor.com/7KlK.gif')
 
