@@ -155,7 +155,7 @@ async def help(ctx):
 	l=random.randint(0,len(col)-1)
 	ee='''Mention <@799901775536062474> to use commands of mine\n\nCommands:\n**<@799901775536062474> kill** : To kill Ya boys with Commands\n**<@799901775536062474> funnyface** : To Spend some time in posting random shitty\n            Images of Our Specimens\n**<@799901775536062474> help** : show this message '''
 	e=discord.Embed(title='Help Command',desc=ee,color=col[l])
-	e.set_author(name='Nesamani from TYPE A')
+	e.set_author(name='Nesamani')
 	e.add_field(name="\nPrefix:", value=ee)
 	e.set_thumbnail(url='https://cdn.discordapp.com/attachments/800768867117826048/809715500258033664/friends.jpg')
 	e.set_footer(text=f'Requested By {ctx.author.display_name} ')
