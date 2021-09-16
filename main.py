@@ -176,7 +176,7 @@ async def tigerjoke(ctx):
 	if joke['type']=='kadi':
 		a=joke['content']
 		b=joke['subcontent']
-		oe.add_field(name=f"\n{a}", value=f'{b}')
+		oe.add_field(name=f"\n{a}", value=f'***Yen ?***\n{b}')
 	elif joke['type']=='single':
 		a=joke['dialogue']
 		oe.add_field(name=f'Joke :',value=f'{a}')
