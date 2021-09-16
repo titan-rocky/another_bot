@@ -69,6 +69,7 @@ async def on_message(message):
 	if message.author == bot.user:
 			return 1
 	cxt=chatbot.chatreply(message)
+	cxt.reply()
 	if cxt.Message:
 		await message.reply(f'{cxt.Message}')
 	if message.author.id==message.guild.owner_id:
