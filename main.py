@@ -34,9 +34,10 @@ async def morning():
 			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
 			await bot.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
 		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
-
-
-
+	elif b.startswith('06:00'):
+		await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='@Nesamani help'))
+	elif b.startswith('18:00')
+		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
 
 '''K A I P U L L A : dedicated for Type-A'''
 @bot.event
@@ -52,13 +53,7 @@ async def on_ready():
 		if jd==4:
 			await bot.get_channel(887614433210302478).send('https://tenor.com/y9h7.gif')
 
-	p=random.randint(1,2)
-	if p==1:
-		await bot.change_presence(status=discord.Status.idle,activity=discord.CustomActivity(name='Dei Aprasandingalaa'))
-	#if p==2:
-	#	await bot.change_presence(activity=discord.Streaming(name="Your First Night", url='https://www.twitch.tv/titan_rocky'))
-	if p==2:
-		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
+		
 
 	morning.start()
 	   #if bot.get(member.status == Status.online
