@@ -182,7 +182,7 @@ async def tigerjoke(ctx):
 		oe.add_field(name=f'Joke :',value=f'{a}')
 	elif joke['type']=='qa':
 		a=joke['question'];b=joke['answer']
-		e.add_field(name=f'{a}',value=f'{b}')
+		oe.add_field(name=f'{a}',value=f'{b}')
 	elif joke['type']=='convo':
 		text=''
 		for i in range(1,8):
@@ -192,7 +192,7 @@ async def tigerjoke(ctx):
 			else:
 				break
 		print(text)
-		e.add_field(name='Conversation :',value=text)
+		oe.add_field(name='Conversation :',value=text)
 
 		oe.add_field(name=f'{a}',value=f'{b}')
 	await ctx.send(embed=oe)
