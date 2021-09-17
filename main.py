@@ -41,7 +41,7 @@ async def on_ready():
 		if jd==4:
 			await bot.get_channel(887614433210302478).send('https://tenor.com/y9h7.gif')
 
-	bot.loop.create_task(morning())
+	morning.start()
 	   #if bot.get(member.status == Status.online
 
 @bot.event
@@ -75,7 +75,7 @@ async def morning():
 		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
 	elif b.startswith('06:00'):
 		await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='@Nesamani help'))
-	elif b.startswith('12:00'):
+	elif b.startswith('23:11'):
 		await bot.change_presence(status=discord.Status.idle,activity=discord.Streaming(name='Dei Apprasandingala', url='https://www.twitch.tv/titan_rocky'))
 	elif b.startswith('18:00'):
 		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
