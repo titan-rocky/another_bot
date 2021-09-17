@@ -61,7 +61,7 @@ async def on_message(message):
 
 	await bot.process_commands(message)
 
-@bot.event
+@tasks.loop(seconds=60)
 async def morning():
 	print('Morning')
 	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
@@ -79,7 +79,6 @@ async def morning():
 		await bot.change_presence(status=discord.Status.idle,activity=discord.Streaming(name='Dei Apprasandingala', url='https://www.twitch.tv/titan_rocky'))
 	elif b.startswith('18:00'):
 		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
-	await asyncio.sleep(60)
 
 @bot.event
 async def on_command_error(ctx,error):
