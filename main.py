@@ -23,21 +23,7 @@ tracemalloc.start()
 bot=commands.Bot(command_prefix=commands.when_mentioned)
 bot.remove_command('help')
 
-@tasks.loop(seconds=60)
-async def morning():
-	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
-	b=indtime.strftime('%H:%M:%S')
-	if b.startswith('00:30'):
-		await bot.get_channel(755751678971478049).send('Good Night Nanbargale !')
-	elif b.startswith('07:30'):
-		if random.randint(0,3)==3:
-			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
-			await bot.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
-		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
-	elif b.startswith('06:00'):
-		await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='@Nesamani help'))
-	elif b.startswith('18:00'):
-		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
+
 
 '''K A I P U L L A : dedicated for Type-A'''
 @bot.event
@@ -46,6 +32,8 @@ async def on_ready():
 	print('Ready to bell')
 	print(bot.user)
 	jd=random.randint(1,6)
+	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
+	await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='Use @Nesamani help',start=indtime,end=datetime(indtime.year,indtime.month,indtime.day,0,0,0)))
 	if jd==3:
 		await bot.get_channel(887614433210302478).send('https://tenor.com/baf7V.gif')
 	elif jd in [1,2,4,6]:
@@ -53,9 +41,7 @@ async def on_ready():
 		if jd==4:
 			await bot.get_channel(887614433210302478).send('https://tenor.com/y9h7.gif')
 
-		
-
-	morning.start()
+	bot.loop.create_task(morning())
 	   #if bot.get(member.status == Status.online
 
 @bot.event
@@ -74,6 +60,25 @@ async def on_message(message):
 			await message.channel.send('https://tenor.com/baf7N.gif')
 
 	await bot.process_commands(message)
+
+@bot.event
+async def morning():
+	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
+	b=indtime.strftime('%H:%M:%S')
+	if b.startswith('00:30'):
+		await bot.get_channel(755751678971478049).send('Good Night Nanbargale !')
+	elif b.startswith('07:30'):
+		if random.randint(0,3)==3:
+			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
+			await bot.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
+		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
+	elif b.startswith('06:00'):
+		await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='@Nesamani help'))
+	elif b.startswith('12:00'):
+		await bot.change_presence(status=discord.Status.idle,activity=discord.Streaming(name='Dei Apprasandingala', url='https://www.twitch.tv/titan_rocky'))
+	elif b.startswith('18:00'):
+		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
+	await asyncio.sleep(60)
 
 @bot.event
 async def on_command_error(ctx,error):
