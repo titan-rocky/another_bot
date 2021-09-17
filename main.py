@@ -63,7 +63,6 @@ async def on_message(message):
 
 @tasks.loop(seconds=60)
 async def morning():
-	print('Morning')
 	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
 	b=indtime.strftime('%H:%M:%S')
 	if b.startswith('00:30'):
@@ -73,12 +72,17 @@ async def morning():
 			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
 			await bot.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
 		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
+	elif b.startswith('00:00'):
+		await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="This Server"))
 	elif b.startswith('06:00'):
 		await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='@Nesamani help'))
-	elif b.startswith('23:11'):
+	elif b.startswith('09:00'):
+		await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching,name="🔨 Hitting My Head"))
+	elif b.startswith('12:00'):
 		await bot.change_presence(status=discord.Status.idle,activity=discord.Streaming(name='Dei Apprasandingala', url='https://www.twitch.tv/titan_rocky'))
 	elif b.startswith('18:00'):
 		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
+
 
 @bot.event
 async def on_command_error(ctx,error):
