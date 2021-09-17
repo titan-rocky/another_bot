@@ -63,6 +63,7 @@ async def on_message(message):
 
 @bot.event
 async def morning():
+	print('Morning')
 	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
 	b=indtime.strftime('%H:%M:%S')
 	if b.startswith('00:30'):
