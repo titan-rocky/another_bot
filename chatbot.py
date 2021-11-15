@@ -24,7 +24,7 @@ class chatreply:
 		c_sad=any(i in word for i in ['sad','depressed','sogam','unhappy','saava','saaga'])
 		c_depart=any(i in word for i in name) and any(i in word for i in ['pogala','thoongala','kelambu','poda','po'])
 		c_die=any(i in word for i in name) and any(i in word for i in ['saavu','die','seththu','sethu'])
-		print('Chatbot acv' if any(c_vanakkam,c_nesa,c_bye,c_kichina,c_whattodo,c_disapp,c_contract,c_sad,c_depart,c_die) else '')
+		print('Chatbot acv' if any([c_vanakkam,c_nesa,c_bye,c_kichina,c_whattodo,c_disapp,c_contract,c_sad,c_depart,c_die]) else '')
 
 		if c_vanakkam:
 			self.Type='Reply'
