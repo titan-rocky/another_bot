@@ -45,6 +45,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+	bbb=
 	d=[i.lower() for i in str(message.content).split()]
 	if message.author == bot.user:
 			return 1
@@ -57,9 +58,7 @@ async def on_message(message):
 		if gox==3:
 			await message.channel.send('Dei Intha Aiyya Thanda Intha Veetukku Mainu')
 			await message.channel.send('https://tenor.com/baf7N.gif')
-	print('1ddddddddddddd')
 	await bot.process_commands(message)
-	print('awaited')
 
 @tasks.loop(seconds=60)
 async def morning():
