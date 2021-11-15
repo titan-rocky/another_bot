@@ -45,7 +45,6 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-	bbb=
 	d=[i.lower() for i in str(message.content).split()]
 	if message.author == bot.user:
 			return 1
