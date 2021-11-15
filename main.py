@@ -59,6 +59,7 @@ async def on_message(message):
 			await message.channel.send('https://tenor.com/baf7N.gif')
 	print('1ddddddddddddd')
 	await bot.process_commands(message)
+	print('awaited')
 
 @tasks.loop(seconds=60)
 async def morning():
