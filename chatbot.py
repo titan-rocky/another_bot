@@ -2,7 +2,7 @@ import random
 
 class chatreply:
 	def __init__(self,cont):
-		self.content=str(cont.content)
+		self.content=str(cont.content).lstrip(' ')
 		self.Message=''
 		self.Type=''
 
@@ -19,11 +19,12 @@ class chatreply:
 		c_call=any(i in word for i in name) and any(i in word for i in ['adei','dei','dai','yow','yo']) and len(word)==2
 		c_kichina=any(i in word for i in ['chithappa','siththappu','chithappu'])
 		c_whattodo=any(i in word for i in name) and all(i in word for i in ['ippo','enna','panradhu'])
-		c_disapp=all(i in word for i in ['inaikki','gaali','nee','nesamani']) or all(i in word for i in ['inaikki','gaali','nee','nesa']) or all(i in word for i in ['romba panra','nesamani']) or all(i in word for i in ['inaikki','seththa','da','nee','nesamani']) 
+		c_disapp=all(i in word for i in ['inaikki','gaali','nee','nesamani']) or all(i in word for i in ['inaikki','gaali','nee','nesa']) or all(i in word for i in ['romba panra','nesamani'])
 		c_contract='contract' in word or 'contractu' in word
 		c_sad=any(i in word for i in ['sad','depressed','sogam','unhappy','saava','saaga'])
 		c_depart=any(i in word for i in name) and any(i in word for i in ['pogala','thoongala','kelambu','poda','po'])
 		c_die=any(i in word for i in name) and any(i in word for i in ['saavu','die','seththu','sethu'])
+		print('Chatbot acv' if any(c_vanakkam,c_nesa,c_bye,c_kichina,c_whattodo,c_disapp,c_contract,c_sad,c_depart,c_die) else '')
 
 		if c_vanakkam:
 			self.Type='Reply'
