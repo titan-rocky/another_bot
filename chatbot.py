@@ -12,10 +12,14 @@ class chatreply:
 		if any(i=='?' for i in word) or any('?' in i for i in word ):
 			self.Type='Question'
 
-		c_nesa='nesamani' in word  or 'nesa' in word 
-		c_hi=all(i in word for i in ['hi','nesamani']) or all(i in word for i in ['hi','nesa'])
-		c_vanakkam=all(i in word for i in ['vanakkam','nesamani']) or all(i in word for i in ['vanakkam','nesa'])
-		c_bye=all(i in word for i in ['bye','nesamani']) or all(i in word for i in ['bye','nesa'])
+		name=['nesamani','nesa']
+		c_nesa=any(i in word for i in name)
+
+
+
+		c_vanakkam=any(i in word for i in name) and any(i in word for i in ['vanakkam','namaste','hi','hii','vanakko'])
+		c_bye=any(i in word for i in name) and any(i in word for i in ['bye','kelamburan','byee','tata']) and len(word)==2
+		#c_bye=all(i in word for i in ['bye','nesamani']) or all(i in word for i in ['bye','nesa'])
 		c_call=all(i in word for i in ['dei','nesamani']) or all(i in word for i in ['dei','nesa'])
 		c_kichina=any(i in word for i in ['chithappa','siththappu','chithappu'])
 		c_whattodo=all(i in word for i in ['ippo','enna','panradhu'])
@@ -23,7 +27,7 @@ class chatreply:
 		c_contract='contract' in word or 'contractu' in word
 		c_sad=any(i in word for i in ['sad','depressed','sogam','unhappy','saava','saaga'])
 
-		if c_hi or c_vanakkam:
+		if c_vanakkam:
 			self.Type='Reply'
 			replies=['Sollra **Venna**','Vanakkam 🙏','*Ada Namma Paiyan*\n**Sollupa**',]
 			self.Message=random.choice(replies)
@@ -58,6 +62,11 @@ class chatreply:
 		elif c_whattodo:
 			self.Type='Reply'
 			self.Message='Oru Aani yum Pudunga Venam'
+
+
+		elif all(i in word for i in ['nesa','sethu','po']):
+			self.Type='Reply'
+			self.Message='Dei Enna Feeilinga !'
 
 	#def username_check(self):
 		#b=self.content.author.
