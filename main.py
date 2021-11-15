@@ -57,15 +57,19 @@ async def on_message(message):
 		if gox==3:
 			await message.channel.send('Dei Intha Aiyya Thanda Intha Veetukku Mainu')
 			await message.channel.send('https://tenor.com/baf7N.gif')
-
+	print(a)
 	await bot.process_commands(message)
 
 @tasks.loop(seconds=60)
 async def morning():
 	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
 	b=indtime.strftime('%H:%M:%S')
+	
 	if b.startswith('00:30'):
-		await bot.get_channel(755751678971478049).send('Good Night Nanbargale !')
+		if random.randint(0,2)==0:
+			await bot.get_channel(755751678971478049).send('Good Night Priends !')
+		elif random.randint(0,2)==1:
+			await bot.get_channel(755751678971478049).send('Aahaa! Onnu kooditangayya, onnu kooditangayya!')
 	elif b.startswith('07:30'):
 		if random.randint(0,7)==3:
 			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
