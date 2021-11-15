@@ -16,7 +16,7 @@ class chatreply:
 		c_nesa=any(i in word for i in name)
 		c_vanakkam=any(i in word for i in name) and any(i in word for i in ['vanakkam','namaste','hi','hii','vanakko'])
 		c_bye=any(i in word for i in name) and any(i in word for i in ['bye','kelamburan','byee','tata']) and len(word)==2
-		c_vanakkam=any(i in word for i in name) and any(i in word for i in ['adei','dei','dai','yow','yo']) and len(word)==2
+		c_call=any(i in word for i in name) and any(i in word for i in ['adei','dei','dai','yow','yo']) and len(word)==2
 		c_kichina=any(i in word for i in ['chithappa','siththappu','chithappu'])
 		c_whattodo=any(i in word for i in name) and all(i in word for i in ['ippo','enna','panradhu'])
 		c_disapp=all(i in word for i in ['inaikki','gaali','nee','nesamani']) or all(i in word for i in ['inaikki','gaali','nee','nesa']) or all(i in word for i in ['romba panra','nesamani']) or all(i in word for i in ['inaikki','seththa','da','nee','nesamani']) 
