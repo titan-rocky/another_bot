@@ -2,7 +2,7 @@ import random
 
 class chatreply:
 	def __init__(self,cont):
-		self.content=cont.content
+		self.content=str(cont.content)
 		self.Message=''
 		self.Type=''
 
