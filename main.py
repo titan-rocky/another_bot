@@ -25,10 +25,9 @@ bot.remove_command('help')
 
 
 
-'''K A I P U L L A : dedicated for Type-A'''
 @bot.event
 async def on_ready():
-	'''N E S A M A N I : dedicated for Type-A'''
+	'''N E S A M A N I : dedicated for'''
 	print('Ready to bell')
 	print(bot.user)
 	jd=random.randint(1,6)
@@ -68,7 +67,7 @@ async def morning():
 	if b.startswith('00:30'):
 		await bot.get_channel(755751678971478049).send('Good Night Nanbargale !')
 	elif b.startswith('07:30'):
-		if random.randint(0,3)==3:
+		if random.randint(0,7)==3:
 			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
 			await bot.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
 		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
