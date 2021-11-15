@@ -13,7 +13,7 @@ class chatreply:
 			self.Type='Question'
 
 		name=['nesamani','nesa']
-		c_nesa=any(i in word for i in name)
+		c_nesa=any(i in word for i in name) and len(word)==1
 		c_vanakkam=any(i in word for i in name) and any(i in word for i in ['vanakkam','namaste','hi','hii','vanakko'])
 		c_bye=any(i in word for i in name) and any(i in word for i in ['bye','kelamburan','byee','tata']) and len(word)==2
 		c_call=any(i in word for i in name) and any(i in word for i in ['adei','dei','dai','yow','yo']) and len(word)==2
