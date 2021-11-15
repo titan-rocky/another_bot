@@ -57,7 +57,7 @@ async def on_message(message):
 		if gox==3:
 			await message.channel.send('Dei Intha Aiyya Thanda Intha Veetukku Mainu')
 			await message.channel.send('https://tenor.com/baf7N.gif')
-	print(a)
+	print('1ddddddddddddd')
 	await bot.process_commands(message)
 
 @tasks.loop(seconds=60)
