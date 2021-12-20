@@ -80,7 +80,7 @@ async def morning():
 			await bot.get_channel(botguilds[0]).send(f'Ennada Innum **{bcount}** peru thoongama irukkinga ! Poi Thoongunga!\n**Udambukku nalladhu illa**')
 		else:
 			await bot.get_channel(botguilds[0]).send(random.choice(lb))
-	elif b.startswith('12:31'):
+	elif b.startswith('06:00'):
 		lb2=['Adhukkulayum Vidinjiricha\nhttps://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif\nKaalai Vanakkam','Ellorukkum Iniya Kaalai Vanakkam !']
 		await bot.get_channel(botguilds[0]).send(random.choice(lb2))
 	elif b.startswith('00:00'):
