@@ -110,7 +110,7 @@ async def kill(ctx,*,ba):
 	#print(ba)
 	#print(f'<@!799901775536062474>'==bas)
 	gg=0
-	if f'<@!799901775536062474>'==bas or bas.lower()=='nesamani' or bas.lower()=='yourself':
+	if f'<@!799901775536062474>'==bas or bas.lower()=='nesamani' or bas.lower()=='nesa' or bas.lower()=='yourself':
 		lis=[f'Ennaya da Kolla paakura {ctx.author.mention} ! Dei inaikku unna Kollama vida Maatan !']
 		gg=1
 	elif not (f'<@!{ctx.author.id}>'==ba) or not (ba.lower().find(ctx.author.name)):
