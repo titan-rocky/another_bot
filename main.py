@@ -33,13 +33,17 @@ async def on_ready():
 	jd=random.randint(1,6)
 	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
 	await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='Use @Nesamani help',start=indtime,end=datetime(indtime.year,indtime.month,indtime.day,0,0,0)))
+	guimem=bot.get_guild(755751678531338303)
+	lis=guimem.members
+	print(lis)
+	'''
 	if jd==3:
 		await bot.get_channel(887614433210302478).send('https://tenor.com/baf7V.gif')
 	elif jd in [1,2,4,6]:
 		await bot.get_channel(887614433210302478).send('Itho Vanthutten ...')
 		if jd==4:
 			await bot.get_channel(887614433210302478).send('https://tenor.com/y9h7.gif')
-
+	'''
 	morning.start()
 	   #if bot.get(member.status == Status.online
 
@@ -53,7 +57,7 @@ async def on_message(message):
 	if cxt.Message:
 		await message.reply(f'{cxt.Message}')
 	if message.author.id==message.guild.owner_id:
-		gox=random.randint(0,13)
+		gox=random.randint(0,50)
 		if gox==3:
 			await message.channel.send('Dei Intha Aiyya Thanda Intha Veetukku Mainu')
 			await message.channel.send('https://tenor.com/baf7N.gif')
@@ -68,6 +72,9 @@ async def morning():
 		if random.randint(0,2)==0:
 			await bot.get_channel(755751678971478049).send('Good Night Priends !')
 		elif random.randint(0,2)==1:
+			guimem=bot.get_guild(755751678531338303)
+			lis=guimem.members
+			print(lis)
 			await bot.get_channel(755751678971478049).send('Aahaa! Onnu kooditangayya, onnu kooditangayya!')
 	elif b.startswith('07:30'):
 		if random.randint(0,7)==3:
