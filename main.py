@@ -220,7 +220,7 @@ class kiruba(commands.cog):
 
 
 
-#keep_alive()
+keep_alive()
 
 TOKEN=os.environ['discord_token']
 bot.run(TOKEN)
