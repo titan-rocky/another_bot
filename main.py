@@ -20,8 +20,10 @@ import json
 tracemalloc.start()
 
 #Adra nesamani
-bot=commands.Bot(command_prefix=commands.when_mentioned)
+Intents=discord.Intents.all()
+bot=commands.Bot(command_prefix=commands.when_mentioned,intents=Intents)
 bot.remove_command('help')
+botguilds=[755751678971478049,887614433210302478] #guilds'main channels PRIENDS,NP
 
 
 
@@ -34,8 +36,8 @@ async def on_ready():
 	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
 	await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='Use @Nesamani help',start=indtime,end=datetime(indtime.year,indtime.month,indtime.day,0,0,0)))
 	guimem=bot.get_guild(887614433210302474)
-	lis=guimem.members
-	print(lis)
+	global gex
+	gex=bot.get_guild(755751678531338303)
 	'''
 	if jd==3:
 		await bot.get_channel(887614433210302478).send('https://tenor.com/baf7V.gif')
@@ -69,18 +71,18 @@ async def morning():
 	b=indtime.strftime('%H:%M:%S')
 	
 	if b.startswith('00:30'):
-		if random.randint(0,2)==0:
-			await bot.get_channel(755751678971478049).send('Good Night Priends !')
-		elif random.randint(0,2)==1:
-			guimem=bot.get_guild(755751678531338303)
-			lis=guimem.members
-			print(lis)
-			await bot.get_channel(755751678971478049).send('Aahaa! Onnu kooditangayya, onnu kooditangayya!')
-	elif b.startswith('07:30'):
-		if random.randint(0,7)==3:
-			await bot.get_channel(755751678971478049).send('Adhukkulayum Vidinjiricha')
-			await bot.get_channel(755751678971478049).send('https://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif')
-		await bot.get_channel(755751678971478049).send('Ellarukkum Vanakkam !')
+		lb=['Good Night Priends !','Mallaakka Paduthu Vittathai Paakkurathu Evlo Sugam , Thoonga poren zzz']
+		ddd=[i.status for i in gex.members]
+		mo=[i!=discord.Status.offline for i in ddd]
+		bcount=mo.count(True)
+		print(bcount)
+		if bcount>5:
+			await bot.get_channel(botguilds[0]).send(f'Ennada Innum **{bcount}** peru thoongama irukkinga ! Poi Thoongunga!\n**Udambukku nalladhu illa**')
+		else:
+			await bot.get_channel(botguilds[0]).send(random.choice(lb))
+	elif b.startswith('12:31'):
+		lb2=['Adhukkulayum Vidinjiricha\nhttps://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif\nKaalai Vanakkam','Ellorukkum Iniya Kaalai Vanakkam !']
+		await bot.get_channel(botguilds[0]).send(random.choice(lb2))
 	elif b.startswith('00:00'):
 		await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="This Server"))
 	elif b.startswith('06:00'):
@@ -218,9 +220,9 @@ class kiruba(commands.cog):
 
 
 
-keep_alive()
+#keep_alive()
 
-TOKEN=os.environ['discord_token']
+TOKEN=os.environ['discord_token']#'Nzk5OTAxNzc1NTM2MDYyNDc0.YAKUlA.7S5o72PTMmb0DWcYoHvEg3xDheM'
 bot.run(TOKEN)
 
 

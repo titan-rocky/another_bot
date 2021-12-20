@@ -8,7 +8,6 @@ class chatreply:
 
 	def reply(self):
 		word=[i.lower() for i in self.content.split(' ')]
-		print(word)
 		if any(i=='?' for i in word) or any('?' in i for i in word ):
 			self.Type='Question'
 
@@ -38,7 +37,7 @@ class chatreply:
 
 		elif c_call:
 			self.Type='Reply'
-			replies=['Enthirichchi Teayap Podura En Venru','Vanakkam 🙏','*Ada Namma Paiyan*\n**Sollupa**','Kadupethuraru My Lord <@683707288120590372>']
+			replies=['Enthirichchi Teayap Podura En Venru','Vanakkam 🙏','*Ada Namma Paiyan*\n**Sollupa**','Kadupethuraru My Lord <@683707288120590372>','Poda Dubuku']
 			self.Message=random.choice(replies)
 			
 		elif c_nesa:
