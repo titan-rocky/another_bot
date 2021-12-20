@@ -33,7 +33,7 @@ async def on_ready():
 	jd=random.randint(1,6)
 	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
 	await bot.change_presence(status=discord.Status.idle,activity=discord.Game(name='Use @Nesamani help',start=indtime,end=datetime(indtime.year,indtime.month,indtime.day,0,0,0)))
-	guimem=bot.get_guild(755751678531338303)
+	guimem=bot.get_guild(887614433210302474)
 	lis=guimem.members
 	print(lis)
 	'''
