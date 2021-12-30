@@ -72,7 +72,7 @@ async def morning():
 	
 	if b.startswith('00:30'):
 		lb=['Good Night Priends !','Mallaakka Paduthu Vittathai Paakkurathu Evlo Sugam , Thoonga poren zzz']
-		ddd=[i.status for i in gex.members]
+		ddd=[i.status for i in gex.members if not(i.bot)]
 		mo=[i!=discord.Status.offline and not(i.bot) for i in ddd]
 		bcount=mo.count(True)
 		print(bcount)
