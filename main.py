@@ -16,6 +16,8 @@ from alive import keep_alive
 import chatbot
 import json
 
+import csv
+import testbir
 
 tracemalloc.start()
 
@@ -73,7 +75,7 @@ async def morning():
 	if b.startswith('00:30'):
 		lb=['Good Night Priends !','Mallaakka Paduthu Vittathai Paakkurathu Evlo Sugam , Thoonga poren zzz']
 		ddd=[i.status for i in gex.members if not(i.bot)]
-		mo=[i!=discord.Status.offline and not(i.bot) for i in ddd]
+		mo=[i!=discord.Status.offline for i in ddd]
 		bcount=mo.count(True)
 		print(bcount)
 		if bcount>5:
@@ -94,6 +96,22 @@ async def morning():
 	elif b.startswith('18:00'):
 		await bot.change_presence(activity=discord.Streaming(name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky'))
 
+@tasks.loop(seconds=3600)
+async def birthday():
+	channelid=886601202123571221
+	indtime=datetime.now(pytz.timezone('Asia/Calcutta'))
+	b=indtime.strftime('%H:%M:%S')
+	ttime=indtime.strftime('%H:%M:%S')
+	tdate=indtime.strftime('%Y-%d-%m')[:10]
+	tyear=indtime.strftime('%Y')
+	cd=open('birthday.csv','r')
+	data=[i for i in csv.reader(cd)]
+	#check1
+	if b.startswith('00'):
+		a=testbir.sendto(ttdate,ttyear)
+	elif b.startswith('12'):
+		a=testbir.sendcheck(ttdate,ttyear)
+	await bot.get_channel(channelid).send(f'<@&922184605434527845>! \n Today is <@{int(a[1])}>\'s Birthday')
 
 @bot.event
 async def on_command_error(ctx,error):
@@ -126,9 +144,9 @@ async def kill(ctx,*,ba):
 		f'{bas} Suicided because **His Crush** didnt accept his proposal .',
 		f'{bas} was slain by KiRiTo Kun with **Excalibur**',]
 	elif ba.lower().find('myself'):
-		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! \n:( {ctx.author.mention}']
+		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
 	else:
-		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! \n:( {ctx.author.mention}']
+		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
 	index=random.randint(0,len(lis)-1);print(index)
 	await ctx.send(lis[index])
 	if gg==1:
@@ -218,14 +236,9 @@ class kiruba(commands.cog):
 '''
 
 
-@bot.command()
-async def bang(ctx,url:str):
-
 
 
 keep_alive()
 
 TOKEN=os.environ['discord_token']
 bot.run(TOKEN)
-
-
