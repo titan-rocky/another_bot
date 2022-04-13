@@ -126,9 +126,9 @@ async def kill(ctx,*,ba):
 		f'{bas} Suicided because **His Crush** didnt accept his proposal .',
 		f'{bas} was slain by KiRiTo Kun with **Excalibur**',]
 	elif ba.lower().find('myself'):
-		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
+		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! \n:( {ctx.author.mention}']
 	else:
-		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
+		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! \n:( {ctx.author.mention}']
 	index=random.randint(0,len(lis)-1);print(index)
 	await ctx.send(lis[index])
 	if gg==1:
@@ -217,6 +217,9 @@ class kiruba(commands.cog):
 		self.bot=bot
 '''
 
+
+@bot.command()
+async def bang(ctx,url:str):
 
 
 

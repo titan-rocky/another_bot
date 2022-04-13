@@ -55,7 +55,7 @@ class chatreply:
 
 		elif c_sad:
 			self.Type='Reply'
-			self.Message='Dei Enna Feeilinga !'
+			self.Message= random.choice['Dei Enna Feeilinga !','Dei Enna Feeilinga !\nAdhu seri Naanga paakadha Peeling ah','Annan evalo adi vaangunalum dhilla illa , en ta irundhu kaththuko man']
 
 		elif c_whattodo:
 			self.Type='Reply'
