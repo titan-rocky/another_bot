@@ -49,6 +49,7 @@ async def on_ready():
 			await bot.get_channel(887614433210302478).send('https://tenor.com/y9h7.gif')
 	'''
 	morning.start()
+	birthday.start()
 	   #if bot.get(member.status == Status.online
 
 @bot.event
@@ -111,7 +112,7 @@ async def birthday():
 		a=testbir.sendto(ttdate,ttyear)
 	elif b.startswith('12'):
 		a=testbir.sendcheck(ttdate,ttyear)
-	await bot.get_channel(channelid).send(f'<@&922184605434527845>! \n Today is <@{int(a[1])}>\'s Birthday')
+	await bot.get_channel(channelid).send(f'<@&922184605434527845>! \n Today is test\'s Birthday')#<@{int(a[1])}>
 
 @bot.event
 async def on_command_error(ctx,error):
