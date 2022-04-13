@@ -109,9 +109,9 @@ async def birthday():
 	data=[i for i in csv.reader(cd)]
 	#check1
 	if b.startswith('00'):
-		a=testbir.sendto(ttdate,ttyear)
+		a=testbir.sendto(tdate,tyear)
 	elif b.startswith('12'):
-		a=testbir.sendcheck(ttdate,ttyear)
+		a=testbir.sendcheck(tdate,tyear)
 	await bot.get_channel(channelid).send(f'<@&922184605434527845>! \n Today is test\'s Birthday')#<@{int(a[1])}>
 
 @bot.event
