@@ -58,7 +58,7 @@ def sendto(xdate,xyear):
 	m.close()
 	cc=indtime.strftime('%Y-%d-%m')[:10]
 	for j in data[1:]:
-		if f'{year}-{j[2]}-{j[3]}'==xdate:
+		if f'{xyear}-{j[2]}-{j[3]}'==xdate:
 			tickman(xyear,j[1])
 			return j
 
@@ -72,10 +72,10 @@ def sendcheck(xdate,xyear):
 	dum=[i for i in dd[0]]
 	inde=dum.index(f'{year}')
 	for j in data[1:]:
-		if f'{year}-{j[2]}-{j[3]}'==xdate and j[j.index(f'{year}')]=='0':
+		if f'{xyear}-{j[2]}-{j[3]}'==xdate and j[j.index(f'{year}')]=='0':
 			tickman(xyear,j[1])
 			return j
-		
+
 
 #sendto()
 
