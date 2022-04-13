@@ -10,13 +10,11 @@ _year=indtime.strftime('%Y')
 def tickman(year,id):
 	m=open('birthday.csv','r+',newline='')
 	mb=[i for i in csv.reader(m)]
-	print(mb)
 	m.close()
 	if not year in mb[0]:
 		yearadd(year)
 	dum=[i for i in mb[0]]
 	inde=dum.index(f'{year}') #for i in ]if i==f'{year}'
-	print(f'index={inde}')
 	data=[]
 	data.append(mb[0])
 	for i in mb[1:]:
@@ -27,7 +25,6 @@ def tickman(year,id):
 			print('done')
 		else:
 			data.append(i)
-	print(data)
 	m2=open('birthday.csv','w',newline='')		
 	mb2=csv.writer(m2,delimiter=',')
 	mb2.writerows(data)
