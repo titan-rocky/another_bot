@@ -114,6 +114,7 @@ async def birthday():
 		a=testbir.sendcheck(tdate,tyear)
 	if a:
 		await bot.get_channel(channelid).send(f'<@&922184605434527845> ! **Attention Please** !\n Today is **<@{int(a[1])}>\'s** Birthday 🎂 🎉')
+		await bot.change_presence(status=discord.Status.idle,activity=discord.Streaming(name=f'Happy Birthday {a[0]} 🎂', url='https://www.twitch.tv/titan_rocky'))
 @bot.event
 async def on_command_error(ctx,error):
 	if isinstance(error,discord.ext.commands.CommandNotFoundError):
