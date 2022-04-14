@@ -112,7 +112,8 @@ async def birthday():
 		a=testbir.sendto(tdate,tyear)
 	elif b.startswith('12'):
 		a=testbir.sendcheck(tdate,tyear)
-	await bot.get_channel(channelid).send(f'<@&922184605434527845> ! **Attention Please** !\n Today is **<@{int(a[1])}>\'s** Birthday 🎂 🎉')
+	if a:
+		await bot.get_channel(channelid).send(f'<@&922184605434527845> ! **Attention Please** !\n Today is **<@{int(a[1])}>\'s** Birthday 🎂 🎉')
 @bot.event
 async def on_command_error(ctx,error):
 	if isinstance(error,discord.ext.commands.CommandNotFoundError):
