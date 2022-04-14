@@ -117,6 +117,16 @@ async def birthday():
 	if a:
 		await bot.get_channel(channelid).send(f'<@&922184605434527845> ! **Attention Please** !\n Today is **<@{int(a[1])}>\'s** Birthday 🎂 🎉')
 		await bot.change_presence(status=discord.Status.idle,activity=discord.Streaming(name=f'Happy Birthday {a[0]} 🎂', url='https://www.twitch.tv/titan_rocky'))
+
+		ee='''இனிய பிறந்தநாள் நல்வாழ்த்துக்கள்!\nजन्मदिन की शुभकामनाएं !'''
+		e=discord.Embed(title='Greetings from Me',desc=ee,color=0xA32EFF)
+		e.set_author(name=f'Dear <@{a[1]}>')
+		e.add_field(name=f"\nWishing you a Many More Happy Returns of the Day **{a[0]}**", value=ee)
+		e.set_thumbnail(url='https://cdn.discordapp.com/attachments/887634920770506752/964008939542958180/nesa.jpeg')
+		e.set_image(url='https://cdn.discordapp.com/attachments/887634920770506752/964007907379282020/funny-animals-lol.gif')
+		e.set_footer(text=f'oru varudam pinbu sandhippom 🙏🏻')
+		await bot.get_channel(755751678971478049).send(embed=e)
+
 @bot.event
 async def on_command_error(ctx,error):
 	if isinstance(error,discord.ext.commands.CommandNotFoundError):
@@ -152,6 +162,8 @@ async def kill(ctx,*,ba):
 	else:
 		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
 	index=random.randint(0,len(lis)-1);print(index)
+	async with typing():
+		asyncio.sleep(4)
 	await ctx.send(lis[index])
 	if gg==1:
 		dd=await ctx.send('Suda Suda news Varudhu Paaru ')
