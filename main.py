@@ -162,8 +162,8 @@ async def kill(ctx,*,ba):
 	else:
 		lis=[f'neeye unna konnuttu enna seiya pora **Moodhevi** ! :( {ctx.author.mention}']
 	index=random.randint(0,len(lis)-1);print(index)
-	async with typing():
-		asyncio.sleep(4)
+	async with ctx.channel.typing():
+		await asyncio.sleep(4)
 	await ctx.send(lis[index])
 	if gg==1:
 		dd=await ctx.send('Suda Suda news Varudhu Paaru ')
