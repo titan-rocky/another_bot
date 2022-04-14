@@ -150,10 +150,10 @@ async def birthday():
 
         ee = '''இனிய பிறந்தநாள் நல்வாழ்த்துக்கள்!\nजन्मदिन की शुभकामनाएं !'''
         e = discord.Embed(title='Greetings from Me', desc=ee, color=0xA32EFF)
-        e.set_author(name=f'Dear <@{a[1]}>')
+        e.set_author(name=f'Dear {a[0]}')
         e.add_field(
             name=
-            f"\nWishing you a Many More Happy Returns of the Day **{a[0]}**",
+            f"\nWishing you a Many More Happy Returns of the Day **<@{a[1]}>**",
             value=ee)
         e.set_thumbnail(
             url=
