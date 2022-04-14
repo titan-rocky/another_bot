@@ -112,6 +112,8 @@ async def birthday():
 		a=testbir.sendto(tdate,tyear)
 	elif b.startswith('12'):
 		a=testbir.sendcheck(tdate,tyear)
+	else:
+		a=None
 	if a:
 		await bot.get_channel(channelid).send(f'<@&922184605434527845> ! **Attention Please** !\n Today is **<@{int(a[1])}>\'s** Birthday 🎂 🎉')
 		await bot.change_presence(status=discord.Status.idle,activity=discord.Streaming(name=f'Happy Birthday {a[0]} 🎂', url='https://www.twitch.tv/titan_rocky'))
