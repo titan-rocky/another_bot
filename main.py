@@ -124,7 +124,7 @@ async def morning():
 
 @tasks.loop(seconds=3600)
 async def birthday():
-    channelid = 886601202123571221
+    channelid = 755751678971478049
     indtime = datetime.now(pytz.timezone('Asia/Calcutta'))
     b = indtime.strftime('%H:%M:%S')
     ttime = indtime.strftime('%H:%M:%S')
@@ -147,13 +147,14 @@ async def birthday():
                                   activity=discord.Streaming(
                                       name=f'Happy Birthday {a[0]} 🎂',
                                       url='https://www.twitch.tv/titan_rocky'))
+        gmm=await bot.get_user(a[0])
 
         ee = '''இனிய பிறந்தநாள் நல்வாழ்த்துக்கள்!\nजन्मदिन की शुभकामनाएं !'''
         e = discord.Embed(title='Greetings from Me', desc=ee, color=0xA32EFF)
         e.set_author(name=f'Dear {a[0]}')
         e.add_field(
             name=
-            f"\nWishing you a Many More Happy Returns of the Day **<@{a[1]}>**",
+            f"\nWishing you a Many More Happy Returns of the Day **<@{gmm.mention}>**",
             value=ee)
         e.set_thumbnail(
             url=
