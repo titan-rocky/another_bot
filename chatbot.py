@@ -8,7 +8,6 @@ class chatreply:
 
 	def reply(self):
 		word=[i.lower() for i in self.content.split(' ')]
-		print(word)
 		if any(i=='?' for i in word) or any('?' in i for i in word ):
 			self.Type='Question'
 
@@ -68,7 +67,6 @@ class chatreply:
 		elif c_die:
 			self.Type='Reply'
 			self.Message='Aaha kilambitaanya!!'
-		print('Replied')
 
 	#def username_check(self):
 		#b=self.content.author.
