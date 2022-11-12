@@ -63,6 +63,8 @@ async def on_message(message):
     d = [i.lower() for i in str(message.content).split()]
     if message.author == bot.user:
         return 1
+    else:
+    	print(f'Messgae reveived from {message.author}')
     cxt = chatbot.chatreply(message)
     cxt.reply()
     if cxt.Message:
@@ -93,8 +95,7 @@ async def morning():
         if bcount > 5:
         	#if more than 5 people are not sleeping
             await bot.get_channel(botguilds[0]).send(
-                f'Ennada Innum **{bcount}** peru thoongama irukkinga ! Poi Thoongunga!\n**Udambukku nalladhu illa**'
-            )
+                f'Ennada Innum **{bcount}** peru thoongama irukkinga ! Poi Thoongunga!\n**Udambukku nalladhu illa**')
         else:
         	pass
         	#send good night
