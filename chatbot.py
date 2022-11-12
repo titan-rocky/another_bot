@@ -67,6 +67,7 @@ class chatreply:
 		elif c_die:
 			self.Type='Reply'
 			self.Message='Aaha kilambitaanya!!'
+		print('Replied')
 
 	#def username_check(self):
 		#b=self.content.author.
