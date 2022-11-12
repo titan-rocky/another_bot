@@ -96,11 +96,11 @@ async def morning():
                 f'Ennada Innum **{bcount}** peru thoongama irukkinga ! Poi Thoongunga!\n**Udambukku nalladhu illa**'
             )
         else:
+        	pass
         	#send good night
         	'''
             await bot.get_channel(botguilds[0]).send(random.choice(lb))'''
-            pass
-            
+
     elif b.startswith('06:00'):
     	#morning message
         '''lb2 = [
