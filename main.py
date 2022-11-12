@@ -91,31 +91,43 @@ async def morning():
         bcount = mo.count(True)
         print(bcount)
         if bcount > 5:
+        	#if more than 5 people are not sleeping
             await bot.get_channel(botguilds[0]).send(
                 f'Ennada Innum **{bcount}** peru thoongama irukkinga ! Poi Thoongunga!\n**Udambukku nalladhu illa**'
             )
         else:
+        	#send good night
+        	'''
             await bot.get_channel(botguilds[0]).send(random.choice(lb))
+            '''
+            pass
     elif b.startswith('06:00'):
-        lb2 = [
+    	#morning message
+        '''lb2 = [
             'Adhukkulayum Vidinjiricha\nhttps://cdn.discordapp.com/attachments/887634920770506752/887634970049388594/goodm.gif\nKaalai Vanakkam',
             'Ellorukkum Iniya Kaalai Vanakkam !'
         ]
-        await bot.get_channel(botguilds[0]).send(random.choice(lb2))
+        await bot.get_channel(botguilds[0]).send(random.choice(lb2))'''
+        pass
+
     elif b.startswith('00:00'):
         await bot.change_presence(activity=discord.Activity(
             type=discord.ActivityType.listening, name="This Server"))
+
     elif b.startswith('06:00'):
         await bot.change_presence(status=discord.Status.idle,
                                   activity=discord.Game(name='@Nesamani help'))
+
     elif b.startswith('09:00'):
         await bot.change_presence(activity=discord.Activity(
             type=discord.ActivityType.watching, name="🔨 Hitting My Head"))
+
     elif b.startswith('12:00'):
         await bot.change_presence(status=discord.Status.idle,
                                   activity=discord.Streaming(
                                       name='Dei Apprasandingala',
                                       url='https://www.twitch.tv/titan_rocky'))
+        
     elif b.startswith('18:00'):
         await bot.change_presence(activity=discord.Streaming(
             name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky')
