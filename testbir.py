@@ -66,10 +66,10 @@ def sendcheck(xdate,xyear):
 	data=[i for i in dd]
 	m.close()
 	cc=indtime.strftime('%Y-%d-%m')[:10]
-	dum=[i for i in dd[0]]
-	inde=dum.index(f'{year}')
+	dum=[i for i in data[0]]
+	inde=dum.index(f'{xyear}')
 	for j in data[1:]:
-		if f'{xyear}-{j[2]}-{j[3]}'==xdate and j[j.index(f'{year}')]=='0':
+		if f'{xyear}-{j[2]}-{j[3]}'==xdate and j[j.index(f'{xyear}')]=='0':
 			tickman(xyear,j[1])
 			return j
 
