@@ -98,9 +98,9 @@ async def morning():
         else:
         	#send good night
         	'''
-            await bot.get_channel(botguilds[0]).send(random.choice(lb))
-            '''
+            await bot.get_channel(botguilds[0]).send(random.choice(lb))'''
             pass
+            
     elif b.startswith('06:00'):
     	#morning message
         '''lb2 = [
@@ -127,7 +127,7 @@ async def morning():
                                   activity=discord.Streaming(
                                       name='Dei Apprasandingala',
                                       url='https://www.twitch.tv/titan_rocky'))
-        
+
     elif b.startswith('18:00'):
         await bot.change_presence(activity=discord.Streaming(
             name="#Pray_For_Nesamani", url='https://www.twitch.tv/titan_rocky')
